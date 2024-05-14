@@ -23,10 +23,10 @@ const appFonts = {
     // appTextRegular: 'Roboto-Regular',
     // appTextMedium: 'Roboto-Medium',
     // appTextBold: 'Roboto-Bold',
-    appTextLight: 'Montserrat-Light',
-    appTextRegular: 'Montserrat-Regular',
-    appTextMedium: 'Montserrat-Medium',
-    appTextBold: 'Montserrat-Bold',
+    appTextLight: 'Satoshi-Light',
+    appTextRegular: 'Satoshi-Regular',
+    appTextMedium: 'Satoshi-Medium',
+    appTextBold: 'Satoshi-Bold',
   }
 
 export { appImages, appIcons, appSvgs,appFonts }

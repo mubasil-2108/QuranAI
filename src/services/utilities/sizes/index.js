@@ -42,7 +42,7 @@ export const sizes = {
   modalRadius: 15,
   cardRadius: (Platform.OS === 'ios') ? 15 : 15,
   ModalRadius: (Platform.OS === 'ios') ? 25 : 35,
-  inputRadius:(Platform.OS === 'ios') ? 15 : 20,
+  inputRadius:(Platform.OS === 'ios') ? 45 : 50,
   statusBarHeight:statusBarHeight,
   headerHeight:headerHeight+statusBarHeight,
   tabBarHeight:tabBarHeight,

@@ -53,7 +53,7 @@ export const colors = {
   appColor10:'#FFDD00',
 
 
-  appTextColor1: '#0D2533',
+  appTextColor1: '#333333',
   // appTextColor1: '#000000',
   appTextColor2: 'rgba(26,26,26, 1)',
   appTextColor3: '#333333',
@@ -67,6 +67,9 @@ export const colors = {
   appBgColor3: '#E9E9E9',
   appBgColor4: '#AAAAAA',
   appBgColor5: '#A1A1A1',
-  appBgColor6: '#000000'
+  appBgColor6: '#000000',
+
+  //inputText Border
+  inputTextBorder: '#C5C5C5'
 }
 
