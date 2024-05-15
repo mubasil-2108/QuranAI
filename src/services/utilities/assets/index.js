@@ -15,7 +15,8 @@ const appImages = {
 }
 
 const appIcons = {
-    security: require('../../../assets/icons/security.png')
+    security: require('../../../assets/icons/security.png'),
+    mail: require('../../../assets/icons/mail.png')
 }
 
 const appFonts = {

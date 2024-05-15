@@ -38,6 +38,7 @@ const Colored = ({
             }
             <Wrapper style={[appStyles.inputContainerColored, {
                 borderRadius: sizes.inputRadius,
+                borderWidth: responsiveHeight(0.1),
                 backgroundColor: colors.appBgColor1,
                 marginHorizontal: 0
             }, inputContainerStyle]}>

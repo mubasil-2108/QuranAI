@@ -70,6 +70,6 @@ export const colors = {
   appBgColor6: '#000000',
 
   //inputText Border
-  inputTextBorder: '#C5C5C5'
+  inputTextBorder: 'rgba(197, 197, 197, 1)'
 }
 

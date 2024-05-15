@@ -50,6 +50,7 @@ export const sizes = {
     tiny: responsiveFontSize(14),
     small: responsiveFontSize(18),
     medium: responsiveFontSize(24),
+    mediumTiny: responsiveFontSize(20),
     large:responsiveFontSize(34),
     xl: responsiveFontSize(42),
     xxl: responsiveFontSize(48)
