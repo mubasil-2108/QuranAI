@@ -9,8 +9,8 @@ export const Primary = ({
      checkIconType,uncheckIconType,checkIconsize,
      checkedIconColor,uncheckedIconColor
     }) => {
-    const defaultCheckedIconName =checkedIconName?checkedIconName: 'check-circle'
-    const defaultUncheckedIconName =uncheckedIconName?uncheckedIconName: 'checkbox-blank-circle-outline'
+    const defaultCheckedIconName =checkedIconName?checkedIconName: 'checkbox-outline'
+    const defaultUncheckedIconName =uncheckedIconName?uncheckedIconName: 'checkbox-blank-outline'
     const defaultcheckIconType =checkIconType?checkIconType: 'material-community'
     const defaultUncheckIconType =uncheckIconType?uncheckIconType: 'material-community'
     const defaultCheckIconsize =checkIconsize?checkIconsize: sizes.icons.medium

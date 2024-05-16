@@ -3,6 +3,7 @@ import * as appSvgs from './appSvgs'
 // leave off @2x/@3x
 const appImages = {
     logo: require('../../../assets/images/Logo.png'),
+    book: require('../../../assets/images/menu_book.png'),
     user1: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
     user2: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQEZrATmgHOi5ls0YCCQBTkocia_atSw0X-Q&usqp=CAU',
     user3: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIwMIGTutu1jpkhgNCLM-Rd2gz3d0MRSXuPw&usqp=CAU',
@@ -16,7 +17,10 @@ const appImages = {
 
 const appIcons = {
     security: require('../../../assets/icons/security.png'),
-    mail: require('../../../assets/icons/mail.png')
+    lock: require('../../../assets/icons/lock.png'),
+    mail: require('../../../assets/icons/mail.png'),
+    eye: require('../../../assets/icons/eye.png'),
+    logIn: require('../../../assets/icons/logIn.png'),
 }
 
 const appFonts = {

@@ -16,7 +16,7 @@ const Colored = ({
     onChangeText, secureTextEntry, value,
     iconColorRight, iconSizeRight, containerStyle,
     inputContainerStyle, onPressIconRight, inputStyle,
-    right, keyboardType, iconStyleRight, error,
+    right, keyboardType, iconStyleRight,customIconRight, error,
     left, customIconLeft, iconNameLeft, iconTypeLeft, iconSizeLeft,
     iconColorLeft, iconStyleLeft, onPressIconLeft,
     placeholderTextColor
@@ -47,12 +47,12 @@ const Colored = ({
                         left
                         :
                         customIconLeft ?
-                            <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal/2 }}>
+                            <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal / 2 }}>
                                 <Icons.Custom icon={customIconLeft} size={iconSizeLeft ? iconSizeLeft : sizes.icons.medium} color={iconColorLeft ? iconColorLeft : colors.appTextColor1} containerStyle={iconStyleLeft} />
                             </Wrapper>
                             :
                             iconNameLeft ?
-                                <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal/2 }}>
+                                <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal / 2 }}>
                                     <Icon name={iconNameLeft} type={iconTypeLeft} size={iconSizeLeft ? iconSizeLeft : sizes.icons.medium} color={iconColorLeft ? iconColorLeft : colors.appTextColor4} iconStyle={iconStyleLeft} onPress={onPressIconLeft} />
                                 </Wrapper>
                                 :
@@ -76,7 +76,7 @@ const Colored = ({
                                 returnKeyType={returnKeyType}
                                 onSubmitEditing={onSubmitEditing}
                                 multiline={multiline}
-                                placeholderTextColor={placeholderTextColor||'#21212180'}
+                                placeholderTextColor={placeholderTextColor || '#21212180'}
                                 keyboardType={keyboardType}
                                 onFocus={onFocus}
                                 onBlur={onBlur}
@@ -91,12 +91,17 @@ const Colored = ({
                         right ?
                             right
                             :
-                            iconNameRight ?
-                                <Wrapper style={{ alignItems: 'center', marginRight: sizes.marginHorizontal }}>
-                                    <Icon name={iconNameRight} type={iconTypeRight} size={iconSizeRight ? iconSizeRight : sizes.icons.medium} color={iconColorRight ? iconColorRight : colors.appTextColor5} iconStyle={iconStyleRight} onPress={onPressIconRight} />
+                            customIconRight ?
+                                <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal / 2 }}>
+                                    <Icons.Custom icon={customIconRight} size={iconSizeRight ? iconSizeRight : sizes.icons.medium} color={iconColorRight ? iconColorRight : colors.appTextColor1} containerStyle={iconStyleRight} onPress={onPressIconRight}/>
                                 </Wrapper>
                                 :
-                                null
+                                iconNameRight ?
+                                    <Wrapper style={{ alignItems: 'center', marginRight: sizes.marginHorizontal }}>
+                                        <Icon name={iconNameRight} type={iconTypeRight} size={iconSizeRight ? iconSizeRight : sizes.icons.medium} color={iconColorRight ? iconColorRight : colors.appTextColor5} iconStyle={iconStyleRight} onPress={onPressIconRight} />
+                                    </Wrapper>
+                                    :
+                                    null
                     }
                 </View>
             </Wrapper>
@@ -194,13 +199,13 @@ const Underlined = ({
 
     const [titleMarginBottom] = useState(new Animated.Value(0))
     //const [titleSize] = useState(new Animated.Value(fontSizes.regular))
-    const defaultTitleBottomMargin=height(4.5)
+    const defaultTitleBottomMargin = height(4.5)
     const FocusedTitleMarginBottom = defaultTitleBottomMargin
     //const [titleMarginBottom, setTitleMarginBottom] = useState(0)
     //const [titleSize, setTitleSize] = useState(fontSizes.input)
     const moveTitleUp = () => {
         Animated.timing(titleMarginBottom, {
-            toValue:defaultTitleBottomMargin,
+            toValue: defaultTitleBottomMargin,
             duration: 250,
             speed: 50,
             useNativeDriver: false
@@ -237,7 +242,7 @@ const Underlined = ({
             paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null,
         }
     })
-    const defaultTintColor=colors.appTextColor1
+    const defaultTintColor = colors.appTextColor1
     return (
         <TouchableOpacity disabled={!onPress} activeOpacity={1} onPress={onPress}>
             <Wrapper marginHorizontalBase style={[containerStyle]}>
@@ -279,46 +284,46 @@ const Underlined = ({
                             </Wrapper>
                         </Wrapper>
                         <Wrapper style={{}}>
-                        {
-                            children ? children :
-                                onPress ?
-                                    <Wrapper style={{ height: sizes.inputHeight, justifyContent: 'center' }}>
-                                        {
-                                            value ?
-                                                <Wrapper>
-                                                    <Spacer height={title ? Platform.OS === 'ios' ? height(1.25) : height(1.25) : 0} />
-                                                    <Text isMedium numberOfLines={1}>{value}</Text>
-                                                </Wrapper>
-                                                :
-                                                null
-                                        }
-                                    </Wrapper>
-                                    :
-                                    <TextInput
-                                        ref={inputRef}
-                                        onChangeText={onChangeText}
-                                        value={value}
-                                        keyboardType={keyboardType}
-                                        placeholder={placeholder}
-                                        autoFocus={autoFocus}
-                                        autoCapitalize={autoCapitalize ? autoCapitalize : 'none'}
-                                        onFocus={() => {
-                                            onFocusInput();
-                                            onFocus ? onFocus() : null
-                                        }}
-                                        onBlur={() => {
-                                            onBlurInput(),
-                                                onBlur ? onBlur() : null
-                                        }}
-                                        editable={editable}
-                                        underlineColorAndroid="transparent"
-                                        maxLength={maxLength}
-                                        multiline={multiline}
-                                        placeholderTextColor={placeholderTextColor ? placeholderTextColor : colors.appTextColor4}
-                                        secureTextEntry={secureTextEntry}
-                                        style={[appStyles.inputField, { color:defaultTintColor,width: null, height: sizes.inputHeight, paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null, paddingHorizontal: 0 }, inputStyle]}
-                                    />
-                        }
+                            {
+                                children ? children :
+                                    onPress ?
+                                        <Wrapper style={{ height: sizes.inputHeight, justifyContent: 'center' }}>
+                                            {
+                                                value ?
+                                                    <Wrapper>
+                                                        <Spacer height={title ? Platform.OS === 'ios' ? height(1.25) : height(1.25) : 0} />
+                                                        <Text isMedium numberOfLines={1}>{value}</Text>
+                                                    </Wrapper>
+                                                    :
+                                                    null
+                                            }
+                                        </Wrapper>
+                                        :
+                                        <TextInput
+                                            ref={inputRef}
+                                            onChangeText={onChangeText}
+                                            value={value}
+                                            keyboardType={keyboardType}
+                                            placeholder={placeholder}
+                                            autoFocus={autoFocus}
+                                            autoCapitalize={autoCapitalize ? autoCapitalize : 'none'}
+                                            onFocus={() => {
+                                                onFocusInput();
+                                                onFocus ? onFocus() : null
+                                            }}
+                                            onBlur={() => {
+                                                onBlurInput(),
+                                                    onBlur ? onBlur() : null
+                                            }}
+                                            editable={editable}
+                                            underlineColorAndroid="transparent"
+                                            maxLength={maxLength}
+                                            multiline={multiline}
+                                            placeholderTextColor={placeholderTextColor ? placeholderTextColor : colors.appTextColor4}
+                                            secureTextEntry={secureTextEntry}
+                                            style={[appStyles.inputField, { color: defaultTintColor, width: null, height: sizes.inputHeight, paddingTop: title ? Platform.OS === 'ios' ? height(1.5) : height(2.5) : null, paddingHorizontal: 0 }, inputStyle]}
+                                        />
+                            }
                         </Wrapper>
                     </Wrapper>
 
@@ -371,7 +376,7 @@ const SearchBar = ({ value, placeholder, inputContainerStyle, onChangeText, righ
             iconTypeRight="ionicon"
             onPressIconRight={onPressCross}
             right={right}
-            inputStyle={{ height: responsiveHeight(6),paddingHorizontal:sizes.marginHorizontal/2 }}
+            inputStyle={{ height: responsiveHeight(6), paddingHorizontal: sizes.marginHorizontal / 2 }}
             {...props}
         />
     )

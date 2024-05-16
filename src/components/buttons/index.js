@@ -8,49 +8,123 @@ import Wrapper from '../wrapper';
 import Text from '../text';
 import ButtonGroupAnimated from './buttonGroupAnimated'
 
+// export const Colored = ({
+//     text, isLoading, activityColor, animation, onPress, disabled, buttonStyle,
+//     customIcon, textStyle, iconName, iconType, iconSize, buttonColor, iconStyle,
+//     tintColor, direction
+// }) => {
+//     return (
+//         <TouchableOpacity onPress={onPress} disabled={isLoading ? true : disabled}>
+//             <Wrapper animation={animation} style={[appStyles.buttonColord, { borderRadius: sizes.buttonRadius, height: sizes.buttonHeight, backgroundColor: disabled ? colors.appColor2 + '80' : buttonColor ? buttonColor : colors.appColor2 }, buttonStyle]}>
+//                 <Wrapper style={{ flexDirection: direction ? direction : 'row', alignItems: 'center' }}>
+//                     {
+//                         customIcon ?
+//                             <Icons.Custom
+//                                 icon={customIcon}
+//                                 size={iconSize ? iconSize : totalSize(3)}
+//                                 color={tintColor && tintColor}
+//                                 containerStyle={[{ marginRight: width(2.5) }, iconStyle]}
+//                             />
+//                             :
+//                             iconName ?
+//                                 <Icon
+//                                     name={iconName ? iconName : "email-outline"}
+//                                     type={iconType ? iconType : "material-community"}
+//                                     size={iconSize ? iconSize : totalSize(3)}
+//                                     color={tintColor ? tintColor : colors.appTextColor6}
+//                                     iconStyle={[{ marginRight: width(2.5) }, iconStyle]}
+//                                 />
+//                                 :
+//                                 null
+//                     }
+//                     {
+//                         isLoading ?
+//                             <ActivityIndicator
+//                                 color={activityColor ? activityColor : colors.appBgColor1}
+//                                 size={"small"}
+//                             />
+//                             :
+//                             <Text isButtonMedium style={[{ color: tintColor ? tintColor : colors.appTextColor6, }, textStyle]}>{text}</Text>
+//                     }
+                    
+//                 </Wrapper>
+//             </Wrapper>
+//         </TouchableOpacity>
+//     );
+// }
+
 export const Colored = ({
-    text, isLoading, activityColor, animation, onPress, disabled, buttonStyle,
-    customIcon, textStyle, iconName, iconType, iconSize, buttonColor, iconStyle,
-    tintColor, direction
+    text, 
+    isLoading, 
+    activityColor, 
+    animation, 
+    onPress, 
+    disabled, 
+    buttonStyle,
+    customIconLeft, 
+    customIconRight,
+    textStyle, 
+    iconNameLeft, 
+    iconNameRight,
+    iconType, 
+    iconSize, 
+    buttonColor, 
+    iconStyle, 
+    tintColor, 
+    direction
 }) => {
     return (
         <TouchableOpacity onPress={onPress} disabled={isLoading ? true : disabled}>
             <Wrapper animation={animation} style={[appStyles.buttonColord, { borderRadius: sizes.buttonRadius, height: sizes.buttonHeight, backgroundColor: disabled ? colors.appColor2 + '80' : buttonColor ? buttonColor : colors.appColor2 }, buttonStyle]}>
                 <Wrapper style={{ flexDirection: direction ? direction : 'row', alignItems: 'center' }}>
-                    {
-                        customIcon ?
-                            <Icons.Custom
-                                icon={customIcon}
-                                size={iconSize ? iconSize : totalSize(3)}
-                                color={tintColor && tintColor}
-                                containerStyle={[{ marginRight: width(2.5) }, iconStyle]}
-                            />
-                            :
-                            iconName ?
-                                <Icon
-                                    name={iconName ? iconName : "email-outline"}
-                                    type={iconType ? iconType : "material-community"}
-                                    size={iconSize ? iconSize : totalSize(3)}
-                                    color={tintColor ? tintColor : colors.appTextColor6}
-                                    iconStyle={[{ marginRight: width(2.5) }, iconStyle]}
-                                />
-                                :
-                                null
+                    {customIconLeft &&
+                        <Icons.Custom
+                            icon={customIconLeft}
+                            size={iconSize ? iconSize : totalSize(3)}
+                            color={tintColor && tintColor}
+                            containerStyle={[{ marginRight: width(2.5) }, iconStyle]}
+                        />
                     }
-                    {
-                        isLoading ?
-                            <ActivityIndicator
-                                color={activityColor ? activityColor : colors.appBgColor1}
-                                size={"small"}
-                            />
-                            :
-                            <Text isButtonMedium style={[{ color: tintColor ? tintColor : colors.appTextColor6, }, textStyle]}>{text}</Text>
+                    {iconNameLeft &&
+                        <Icon
+                            name={iconNameLeft}
+                            type={iconType ? iconType : "material-community"}
+                            size={iconSize ? iconSize : totalSize(3)}
+                            color={tintColor ? tintColor : colors.appTextColor6}
+                            iconStyle={[{ marginRight: width(2.5) }, iconStyle]}
+                        />
+                    }
+                    {isLoading ?
+                        <ActivityIndicator
+                            color={activityColor ? activityColor : colors.appBgColor1}
+                            size={"small"}
+                        />
+                        :
+                        <Text isButtonMedium style={[{ color: tintColor ? tintColor : colors.appTextColor6, }, textStyle]}>{text}</Text>
+                    }
+                    {customIconRight &&
+                        <Icons.Custom
+                            icon={customIconRight}
+                            size={iconSize ? iconSize : totalSize(3)}
+                            color={tintColor && tintColor}
+                            containerStyle={[{ marginLeft: width(2.5) }, iconStyle]}
+                        />
+                    }
+                    {iconNameRight &&
+                        <Icon
+                            name={iconNameRight}
+                            type={iconType ? iconType : "material-community"}
+                            size={iconSize ? iconSize : totalSize(3)}
+                            color={tintColor ? tintColor : colors.appTextColor6}
+                            iconStyle={[{ marginLeft: width(2.5) }, iconStyle]}
+                        />
                     }
                 </Wrapper>
             </Wrapper>
         </TouchableOpacity>
     );
 }
+
 
 export const ColoredSmall = ({ text, onPress, buttonStyle, customIcon, direction, textStyle, iconName, iconType, iconSize, iconColor, iconStyle }) => {
     return (
