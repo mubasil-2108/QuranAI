@@ -93,7 +93,7 @@ const Colored = ({
                             :
                             customIconRight ?
                                 <Wrapper style={{ alignItems: 'center', marginLeft: sizes.marginHorizontal / 2 }}>
-                                    <Icons.Custom icon={customIconRight} size={iconSizeRight ? iconSizeRight : sizes.icons.medium} color={iconColorRight ? iconColorRight : colors.appTextColor1} containerStyle={iconStyleRight} onPress={onPressIconRight}/>
+                                    <Icons.Custom icon={customIconRight} size={iconSizeRight ? iconSizeRight : sizes.icons.medium} color={iconColorRight ? iconColorRight : colors.appTextColor1} containerStyle={iconStyleRight} onPress={onPressIconRight} />
                                 </Wrapper>
                                 :
                                 iconNameRight ?

@@ -28,7 +28,7 @@ export const colors = {
   success:'#12E500',
   success1: '#00D523',
   rating: '#F4CB1E',
-  warning:'#FFA800',
+  warning:'rgba(231, 76, 60, 1)',
 
   error: '#FF2222',
   error2: '#FF0000',
@@ -57,7 +57,7 @@ export const colors = {
   // appTextColor1: '#000000',
   appTextColor2: 'rgba(26,26,26, 1)',
   appTextColor3: '#A75503',
-  appTextColor4: 'grey',
+  appTextColor4: 'rgba(51, 51, 51, 1)',
   appTextColor5: '#A1A1A1',
   appTextColor6: '#FFFFFF',
   appTextColor7:'#DED9D9',
@@ -76,6 +76,9 @@ export const colors = {
   // icon Color
   iconColor: 'rgba(51, 51, 51, 1)',
   iconColor2: '#A75503',
+  iconColor3: '#FFFFFF',
+  iconColor4: '#333333',
+  iconColor5: 'rgba(51, 51, 51, 1)',
 
   // PlaceHolder Color
   placeHolderColor: 'rgba(197, 197, 197, 1)',
@@ -83,9 +86,13 @@ export const colors = {
   // Button Color
   buttonColor1: '#A75503',
   buttonColor2: '#F1F1F1',
+  buttonColor3: '#FFFFFF',
+  buttonColor4: '#F1F1F1',
+  buttonColor5: 'rgba(255, 255, 255, 1)',
 
   // Button Border
 
-  buttonBorder1: '#333333'
+  buttonBorder1: '#333333',
+  buttonBorder2: 'rgba(197, 197, 197, 1)',
 }
 

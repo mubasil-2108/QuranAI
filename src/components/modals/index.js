@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes, FlatList, Platform } from 'react-native'
+import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes, FlatList, Platform, ImageBackground } from 'react-native'
 import { Icon } from '@rneui/base';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, sizes, appStyles, useKeyboardStatus } from '../../services';
+import { colors, sizes, appStyles, useKeyboardStatus, appIcons, appFonts, fontSizes, responsiveHeight, routes } from '../../services';
 import Modal from 'react-native-modal'
 import Wrapper from '../wrapper';
 import Text from '../text';
@@ -10,6 +10,7 @@ import Spacer from '../spacer';
 import * as Icons from '../icons';
 import * as Buttons from '../buttons';
 import * as ScrollViews from '../scrollViews';
+import * as TextInputs from '../textInput'
 import LinearGradient from 'react-native-linear-gradient';
 
 
@@ -52,8 +53,8 @@ import LinearGradient from 'react-native-linear-gradient';
 //     );
 // }
 export const Swipable = ({
-    visible, toggle, disableSwipe, disableBackdropPress, topMargin, headerTitle,
-    headerRight, headerLeft, hideHeader, children, backdropOpacity, backdropColor, containerStyle }) => {
+    visible, toggle, disableSwipe, disableBackdropPress, topMargin, headerTitle, data, value, setValue,
+    headerRight, headerLeft, hideHeader, children, backdropOpacity, backdropColor, containerStyle, hideContent, hideContent2 }) => {
 
     // manage keyboard
     const keyboardVisible = useKeyboardStatus()
@@ -61,6 +62,8 @@ export const Swipable = ({
 
     const defaultTopMargin = keyboardVisible ? height(12) : topMargin ? (Platform.OS === 'ios' ? topMargin : topMargin + height(5)) : height(12)
     return (
+        // <Wrapper isMain background1 style={[{}]}>
+
         <Modal
             isVisible={visible} // Comment on video User
             style={{ margin: 0 }}
@@ -73,6 +76,7 @@ export const Swipable = ({
 
         >
             <Wrapper flex={1} >
+
                 {/* <LinearGradient style={{ flex: 1 }}
                 colors={['#00000000', '#000000']}
             > */}
@@ -81,19 +85,22 @@ export const Swipable = ({
                         colors={['#00000000', '#000000BF']}
                     />
                 </TouchableOpacity> */}
-                <Wrapper flex={1} justifyContentFlexend={!keyboardVisible}>
+
+                <Wrapper flex={1} justifyContentFlexend={!keyboardVisible} >
                     <TouchableOpacity onPress={disableBackdropPress ? null : toggle} activeOpacity={1} style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, }}>
                         <LinearGradient style={{ flex: 1 }}
                             colors={['#00000000', '#000000BF']}
                         />
                     </TouchableOpacity>
                     <Wrapper
+                        paddingVerticalLarge
                         style={[{
                             //flex: 1,
-                            //marginTop: defaultTopMargin,
+                            marginTop: defaultTopMargin,
                             backgroundColor: colors.appBgColor1,
                             borderTopRightRadius: 25,
                             borderTopLeftRadius: 25,
+
                             //...appStyles.shadowExtraDark
                         }, containerStyle]}>
                         {
@@ -128,14 +135,79 @@ export const Swipable = ({
                                 </Wrapper>
                         }
                         {children}
-
+                        {!hideContent && (
+                            <ScrollViews.KeyboardAvoiding>
+                                {/* <Wrapper> */}
+                                <Wrapper isCenter paddingHorizontalLarge>
+                                    <Text isTinyTitle style={{ fontFamily: appFonts.appTextBold, color: colors.appTextColor1 }}>Reset Password</Text>
+                                    <Text isSmall style={{ textAlign: 'center', marginTop: height(5), fontFamily: appFonts.appTextRegular, color: colors.appTextColor1 }}>Enter you registered email address to receive a{'\n'}password reset link.</Text>
+                                </Wrapper>
+                                <Wrapper paddingHorizontalSmall style={{ marginTop: height(5) }} >
+                                    <TextInputs.Colored title={'Email Address'} keyboardType={'email-address'} inputContainerStyle={{ borderColor: colors.inputTextBorder, borderRadius: width(10) }} customIconLeft={appIcons.mail} iconSizeLeft={sizes.icons.mediumTiny} inputStyle={{ fontSize: fontSizes.regular, fontFamily: appFonts.appTextRegular, color: colors.appTextColor1 }}
+                                        iconColorLeft={colors.iconColor} iconStyleLeft={{ marginLeft: width(0.7) }} placeholder={'example@email.com'} placeholderTextColor={colors.placeHolderColor} titleStyle={{ fontSize: fontSizes.tiny, fontFamily: appFonts.appTextRegular, marginLeft: width(4), color: colors.appTextColor1 }} />
+                                </Wrapper>
+                                <Wrapper paddingVerticalLarge style={{ marginHorizontal: width(15) }} >
+                                    <Buttons.Colored buttonColor={colors.buttonColor1} buttonStyle={{ height: height(8) }} text={'Send Link'} textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular }} />
+                                </Wrapper>
+                                {/* </Wrapper> */}
+                            </ScrollViews.KeyboardAvoiding>
+                        )}
+                        {!hideContent2 && (
+                            <>
+                                <Wrapper isCenter paddingHorizontalLarge paddingVerticalSmall>
+                                    <Text isTinyTitle style={{ fontFamily: appFonts.appTextBold, color: colors.appTextColor1 }}>Profile Options</Text>
+                                </Wrapper>
+                                <Wrapper marginVerticalMedium  >
+                                    <Wrapper style={{marginBottom:height(0.5)}} >
+                                        <Buttons.Custom buttonColor={colors.buttonColor4} buttonStyle={{ height: height(8), justifyContent: 'space-around', borderColor: colors.buttonBorder2, borderWidth: width(0.2) }}
+                                            text={'Edit Profile'} customIconLeft={appIcons.edit} hideContent4={true} flex={7}
+                                            customIconRight={appIcons.chevron_right} tintColor={colors.iconColor4}
+                                            textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.small, }}
+                                            iconStyle={{ alignSelf: 'center', }} />
+                                    </Wrapper>
+                                    <Wrapper style={{marginBottom:height(0.5)}}>
+                                        <Buttons.Custom data={data} buttonColor={colors.buttonColor4} buttonStyle={{ height: height(8), justifyContent: 'space-around', borderColor: colors.buttonBorder2, borderWidth: width(0.2) }}
+                                            text={'Font Size'} customIconLeft={appIcons.format_size} hideContent3={true} 
+                                            customIconRight={appIcons.chevron_right} tintColor={colors.iconColor4} flex={5} setValue={setValue} value={value}
+                                            textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular, }}
+                                            iconStyle={{ alignSelf: 'center', }} disabled={true}/>
+                                    </Wrapper>
+                                    <Wrapper style={{marginBottom:height(0.5)}}>
+                                        <Buttons.Custom buttonColor={colors.buttonColor4} buttonStyle={{ height: height(8), justifyContent: 'space-around', borderColor: colors.buttonBorder2, borderWidth: width(0.2) }}
+                                            text={'How to Use'} customIconLeft={appIcons.info} hideContent4={true} flex={6}
+                                            customIconRight={appIcons.chevron_right} tintColor={colors.iconColor4}
+                                            textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular, }}
+                                            iconStyle={{ alignSelf: 'center', }} />
+                                    </Wrapper>
+                                    <Wrapper style={{marginBottom:height(0.5)}}>
+                                        <Buttons.Custom buttonColor={colors.buttonColor4} buttonStyle={{ height: height(8), justifyContent: 'space-around', borderColor: colors.buttonBorder2, borderWidth: width(0.2) }}
+                                            text={'Terms & Conditions'} customIconLeft={appIcons.file_text} hideContent4={true}
+                                            customIconRight={appIcons.chevron_right} tintColor={colors.iconColor4} flex={6}
+                                            textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular, }}
+                                            iconStyle={{ alignSelf: 'center', }} />
+                                    </Wrapper>
+                                    <Wrapper style={{marginBottom:height(0.5)}}>
+                                        <Buttons.Custom buttonColor={colors.buttonColor4} buttonStyle={{ height: height(8), justifyContent: 'space-around', borderColor: colors.buttonBorder2, borderWidth: width(0.2) }}
+                                            text={'Logout'} customIconLeft={appIcons.log_out} hideContent4={true}
+                                            customIconRight={appIcons.chevron_right} tintColor={colors.warning} flex={6}
+                                            textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular, }}
+                                            iconStyle={{ alignSelf: 'center', }} />
+                                    </Wrapper>
+                                </Wrapper>
+                            </>
+                        )}
+                        {/* <ImageBackground style={{}} ></ImageBackground> */}
                     </Wrapper>
                 </Wrapper>
                 {/* </LinearGradient> */}
+
             </Wrapper>
         </Modal >
+
+
     )
 }
+
 
 export const PopupPrimary = ({
     visible, toggle, title, info, iconName, iconType,
@@ -146,10 +218,11 @@ export const PopupPrimary = ({
     headerTitle, topImage, headerRight, closeIconColor, disableSwipe, icon, disableBackdropPress,
     headerTitleStyle, preBottom, headerStyle, closeIconSize, rightContainerStyle, closeIconContainerSize,
     buttonWrapperShadow, headerBottom, titleStyle, buttonText1Style, buttonText2Style, headerSubtitleStyle, headerSubtitle,
-    buttonsDirection, buttonsContainerStyle,mainContainerStyle,containerStyle,
+    buttonsDirection, buttonsContainerStyle, mainContainerStyle, containerStyle,
 
     //loaders
-    loadingButton1, loadingButton2
+    loadingButton1, loadingButton2,
+    // New prop
 }) => {
 
 
@@ -170,6 +243,7 @@ export const PopupPrimary = ({
             disableSwipe={disableSwipe}
             disableBackdropPress={disableBackdropPress}
             containerStyle={mainContainerStyle}
+            hideContent={true}
         >
             <Wrapper style={containerStyle}>
                 {
@@ -330,7 +404,6 @@ export const PopupPrimary = ({
         </Swipable>
     )
 }
-
 
 export const ImagePickerPopup = ({ visible, toggle, onPressButton1, onPressButton2, title, button1Text, button2Text, cancelText }) => {
     return (

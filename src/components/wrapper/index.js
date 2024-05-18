@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ImageBackground } from 'react-native'
 import { colors, appStyles, sizes } from '../../services';
 import * as Animatable from 'react-native-animatable'
-import LinearGradient from 'react-native-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient'; 
 
 export default ({
     children, style, animation, duration,

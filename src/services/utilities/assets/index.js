@@ -4,6 +4,8 @@ import * as appSvgs from './appSvgs'
 const appImages = {
     logo: require('../../../assets/images/Logo.png'),
     book: require('../../../assets/images/menu_book.png'),
+    backgroundImage: require('../../../assets/images/backgroundImage.png'),
+    profile: require('../../../assets/images/PFP.png'),
     user1: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
     user2: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQEZrATmgHOi5ls0YCCQBTkocia_atSw0X-Q&usqp=CAU',
     user3: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIwMIGTutu1jpkhgNCLM-Rd2gz3d0MRSXuPw&usqp=CAU',
@@ -21,6 +23,13 @@ const appIcons = {
     mail: require('../../../assets/icons/mail.png'),
     eye: require('../../../assets/icons/eye.png'),
     logIn: require('../../../assets/icons/logIn.png'),
+    notification: require('../../../assets/icons/notificationBell.png'),
+    edit: require('../../../assets/icons/edit.png'),
+    format_size: require('../../../assets/icons/format_size.png'),
+    info: require('../../../assets/icons/info.png'),
+    file_text: require('../../../assets/icons/file_text.png'),
+    log_out: require('../../../assets/icons/log_out.png'),
+    chevron_right: require('../../../assets/icons/chevron_right.png')
 }
 
 const appFonts = {

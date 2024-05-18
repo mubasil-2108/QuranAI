@@ -13,7 +13,7 @@ const AuthNavigation = () => {
             initialRouteName={routes.signin}
         >
             <AuthStack.Screen name={routes.signin} component={Auth.Signin} />
-            {/* <AuthStack.Screen name={routes.createAccount} component={Auth.CreateAccount} /> */}
+            <AuthStack.Screen name={routes.createAccount} component={Auth.CreateAccount} />
            
         </AuthStack.Navigator>
     )

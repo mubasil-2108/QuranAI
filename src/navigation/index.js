@@ -26,7 +26,7 @@ export default function Navigation() {
     // else
         return (
             <NavigationContainer
-            // ref={navigationRef}
+            ref={navigationRef}
             >
                 <MainStack.Navigator
                     screenOptions={{ headerShown: false }}
@@ -36,11 +36,11 @@ export default function Navigation() {
                         name={routes.auth}
                         component={AuthNavigation}
                     />
-                    {/* <MainStack.Screen
+                    <MainStack.Screen
                         name={routes.app}
                         component={AppNavigation}
                     />
-                    <MainStack.Screen
+                    {/* <MainStack.Screen
                         name={routes.common}
                         component={CommonNavigation}
                     /> */}

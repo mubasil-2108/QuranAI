@@ -47,9 +47,9 @@ export const Primary = ({
         <Wrapper style={[
             appStyles.headerStyle,
             { height: headerHeight,
-             backgroundColor: defaultBackgroundColor, borderBottomWidth: 0, paddingTop: statusBarHeight, paddingBottom: height(1) }, shadow && appStyles.shadowLight, containerStyle]}>
+             backgroundColor: defaultBackgroundColor, borderBottomWidth: 0, }, shadow && appStyles.shadowLight, containerStyle]}>
             <StatusBars.Light />
-            <Wrapper flex={1} flexDirectionRow alignItemsCenter style={{}}>
+            <Wrapper flex={1} style={{}}>
                 {/* <Wrapper isAbsolute
                     style={[
                         { right: 0, left: 0, backgroundColor: 'green', },
@@ -88,6 +88,7 @@ export const Primary = ({
                     }
                 </Wrapper>
                 <Wrapper flex={7}
+                    justifyContentCenter
                     style={[
                         // { backgroundColor: 'green', },
                         alignTitleLeft ?
