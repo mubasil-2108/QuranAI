@@ -63,6 +63,7 @@ export const sizes = {
     mediumLarge: 45,
     mediumXLarge: 48,
     large: 60,
+    xL: 170,
     logo: 200
   }
 }

@@ -26,7 +26,7 @@ export const routes = {
     //app
     bottomTab: 'bottomTab',
     home: 'home',
-    account: 'account',
+    editProfile: 'editProfile',
     shop: 'shop',
     community: 'community',
     postDetail: 'postDetail',
@@ -40,7 +40,7 @@ export const routes = {
 
     //common
     termsOfService: 'termsOfService',
-    privacyPolicy: 'privacyPolicy',
+    howToUse: 'howToUse',
 }
 export const headers = {
     screenOptions: {

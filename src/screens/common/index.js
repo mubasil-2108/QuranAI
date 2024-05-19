@@ -1,4 +1,4 @@
 import TermsOfService from './termsOfService'
-import PrivacyPolicy from './privacyPolicy'
+import HowToUse from './howToUse'
 
-export { TermsOfService, PrivacyPolicy}
+export { HowToUse, TermsOfService}

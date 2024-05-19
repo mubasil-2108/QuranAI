@@ -3,13 +3,13 @@ import { View } from 'react-native';
 import { totalSize, width, height } from 'react-native-dimension';
 import { Wrapper, Text, Images, Spacer, Icons, Buttons, ScrollViews, HeaderHome, Headers, Modals } from '../../../components';
 import { useHooks } from './hooks'
-import { navigate } from '../../../navigation/rootNavigation';
 import { appImages, colors, routes, sizes, fontSizes, appFonts, appIcons } from '../../../services';
 import { Image } from 'react-native';
 
 
-export default function Home() {
-  const { modalHomeVisible, modalHomeVisibility, data, value, setValue } = useHooks()
+export default function Home(props) {
+  const { navigate, goBack } = props.navigation
+  const { modalHomeVisible, modalHomeVisibility, data, value, setValue, modalLogoutVisible, modalLogoutVisibility } = useHooks()
   return (
     <Wrapper isMain isImageBackground source={appImages.backgroundImage}>
       <ScrollViews.KeyboardAvoiding>
@@ -29,7 +29,7 @@ export default function Home() {
             {/* <Image style={{}} /> */}
           </Wrapper>
 
-          <Modals.Swipable data={data} setValue={setValue} value={value} hideContent={true} hideHeader visible={modalHomeVisible} toggle={modalHomeVisibility} disableBackdropPress={false} />
+          <Modals.Swipable navigate={navigate} data={data} setValue={setValue} toggleLogout={modalLogoutVisibility} visibleLogout={modalLogoutVisible} value={value} hideContent={true} hideHeader visible={modalHomeVisible} toggle={modalHomeVisibility} disableBackdropPress={false} />       
         </Wrapper>
       </ScrollViews.KeyboardAvoiding>
     </Wrapper>

@@ -4,10 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AuthNavigation from './auth';
 import AppNavigation from './app';
-import CommonNavigation from './common';
 import { routes } from '../services';
 import { Splash } from '../screens/auth';
 import { navigationRef } from './rootNavigation';
+import CommonNavigation from './common';
 
 
 const MainStack = createNativeStackNavigator();
@@ -40,10 +40,10 @@ export default function Navigation() {
                         name={routes.app}
                         component={AppNavigation}
                     />
-                    {/* <MainStack.Screen
+                    <MainStack.Screen
                         name={routes.common}
                         component={CommonNavigation}
-                    /> */}
+                    />
                 </MainStack.Navigator>
             </NavigationContainer>
         );

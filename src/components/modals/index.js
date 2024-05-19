@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes, FlatList, Platform, ImageBackground } from 'react-native'
 import { Icon } from '@rneui/base';
+import { navigate } from  "../../navigation/rootNavigation"
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, sizes, appStyles, useKeyboardStatus, appIcons, appFonts, fontSizes, responsiveHeight, routes } from '../../services';
 import Modal from 'react-native-modal'
@@ -12,6 +13,9 @@ import * as Buttons from '../buttons';
 import * as ScrollViews from '../scrollViews';
 import * as TextInputs from '../textInput'
 import LinearGradient from 'react-native-linear-gradient';
+import CommonNavigation from '../../navigation/common';
+import { screensEnabled } from 'react-native-screens';
+import { Modals } from '..';
 
 
 // export const Swipable = ({ children, title, isVisible, toggleModal, footerFlex, headerFlex }) => {
@@ -53,12 +57,12 @@ import LinearGradient from 'react-native-linear-gradient';
 //     );
 // }
 export const Swipable = ({
-    visible, toggle, disableSwipe, disableBackdropPress, topMargin, headerTitle, data, value, setValue,
-    headerRight, headerLeft, hideHeader, children, backdropOpacity, backdropColor, containerStyle, hideContent, hideContent2 }) => {
+    visible, toggle, disableSwipe, disableBackdropPress, topMargin, headerTitle, data, value, setValue, visibleLogout, toggleLogout,
+    headerRight, headerLeft, hideHeader, children, backdropOpacity, backdropColor, containerStyle, hideContent, hideContent2, props}) => {
 
     // manage keyboard
     const keyboardVisible = useKeyboardStatus()
-
+    // const { navigate } = props.navigation
 
     const defaultTopMargin = keyboardVisible ? height(12) : topMargin ? (Platform.OS === 'ios' ? topMargin : topMargin + height(5)) : height(12)
     return (
@@ -162,6 +166,7 @@ export const Swipable = ({
                                         <Buttons.Custom buttonColor={colors.buttonColor4} buttonStyle={{ height: height(8), justifyContent: 'space-around', borderColor: colors.buttonBorder2, borderWidth: width(0.2) }}
                                             text={'Edit Profile'} customIconLeft={appIcons.edit} hideContent4={true} flex={7}
                                             customIconRight={appIcons.chevron_right} tintColor={colors.iconColor4}
+                                            onPress={() => {navigate(routes.editProfile)}}
                                             textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.small, }}
                                             iconStyle={{ alignSelf: 'center', }} />
                                     </Wrapper>
@@ -176,12 +181,14 @@ export const Swipable = ({
                                         <Buttons.Custom buttonColor={colors.buttonColor4} buttonStyle={{ height: height(8), justifyContent: 'space-around', borderColor: colors.buttonBorder2, borderWidth: width(0.2) }}
                                             text={'How to Use'} customIconLeft={appIcons.info} hideContent4={true} flex={6}
                                             customIconRight={appIcons.chevron_right} tintColor={colors.iconColor4}
+                                            onPress={() => {navigate(routes.common, {screen: routes.howToUse})}}
                                             textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular, }}
                                             iconStyle={{ alignSelf: 'center', }} />
                                     </Wrapper>
                                     <Wrapper style={{marginBottom:height(0.5)}}>
                                         <Buttons.Custom buttonColor={colors.buttonColor4} buttonStyle={{ height: height(8), justifyContent: 'space-around', borderColor: colors.buttonBorder2, borderWidth: width(0.2) }}
                                             text={'Terms & Conditions'} customIconLeft={appIcons.file_text} hideContent4={true}
+                                            onPress={() => {navigate(routes.common) }}
                                             customIconRight={appIcons.chevron_right} tintColor={colors.iconColor4} flex={6}
                                             textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular, }}
                                             iconStyle={{ alignSelf: 'center', }} />
@@ -191,18 +198,21 @@ export const Swipable = ({
                                             text={'Logout'} customIconLeft={appIcons.log_out} hideContent4={true}
                                             customIconRight={appIcons.chevron_right} tintColor={colors.warning} flex={6}
                                             textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular, }}
+                                            onPress={toggleLogout}
                                             iconStyle={{ alignSelf: 'center', }} />
                                     </Wrapper>
                                 </Wrapper>
                             </>
                         )}
+                        <Modals.PopupPrimary visible={visibleLogout} toggle={toggleLogout}/>
                         {/* <ImageBackground style={{}} ></ImageBackground> */}
                     </Wrapper>
                 </Wrapper>
                 {/* </LinearGradient> */}
-
+                
             </Wrapper>
         </Modal >
+        
 
 
     )

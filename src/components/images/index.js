@@ -53,9 +53,13 @@ export const Profile = ({ imageStyle, source, containerStyle, animation, onPress
 
 const styles = StyleSheet.create({
     ImageProfileContainer: {
-        ...appStyles.shadowColored,
+        // ...appStyles.shadowColored,
         // backgroundColor:'transparent',
         borderRadius: 100,
+        borderColor: colors.imageBorder,
+        borderStyle:'dashed',
+        
+        borderWidth:height(0.3),
         backgroundColor: colors.appBgColor1
     },
     ImageProfile: {

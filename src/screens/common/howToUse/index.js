@@ -9,7 +9,7 @@ export default function Index() {
     const { terms, text } = useHooks()
     return (
         <Wrapper isMain >
-            <Headers.Primary showBackArrow iconContainer={{ flexDirection: 'row' }} title={'Terms & Conditions'} tintColor={'black'} containerStyle={{ marginTop: height(5), height: height(10), backgroundColor: colors.appColor11 }} />
+            <Headers.Primary showBackArrow iconContainer={{ flexDirection: 'row' }} title={'How to Use'} tintColor={'black'} containerStyle={{ marginTop: height(5), height: height(10), backgroundColor: colors.appColor11 }} />
 
             <ScrollViews.WithKeyboardAvoidingView
             >

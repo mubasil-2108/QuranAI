@@ -1,5 +1,5 @@
 import React from 'react'
-import { appStyles, appSvgs, colors, fontSize, responsiveFontSize, responsiveHeight, responsiveWidth, sizes, useSizes } from '../../services'
+import { appIcons, appStyles, appSvgs, colors, fontSize, responsiveFontSize, responsiveHeight, responsiveWidth, sizes, useSizes } from '../../services'
 //import {Icons, Wrapper, Text } from '..'
 import { goBack } from '../../navigation/rootNavigation'
 import * as Icons from '../icons';
@@ -38,7 +38,7 @@ export const Primary = ({
     onBackPress, search, title, right, searchPress,
     left, titleContainerStyle, centerTitle, tintColor,
     containerStyle, headerTitle, alignTitleLeft, showBackArrow,
-    invertColors, titleStyle, leftContainerStyle, rightContainerStyle, shadow, auth }) => {
+    invertColors, titleStyle, leftContainerStyle,iconContainer, rightContainerStyle, shadow, auth }) => {
 
     const { statusBarHeight, headerHeight, } = useSizes()
     const defaultTintColor = !invertColors ? colors.appTextColor6 : colors.appColor1
@@ -49,7 +49,7 @@ export const Primary = ({
             { height: headerHeight,
              backgroundColor: defaultBackgroundColor, borderBottomWidth: 0, }, shadow && appStyles.shadowLight, containerStyle]}>
             <StatusBars.Light />
-            <Wrapper flex={1} style={{}}>
+            <Wrapper flex={1} style={iconContainer} >
                 {/* <Wrapper isAbsolute
                     style={[
                         { right: 0, left: 0, backgroundColor: 'green', },
@@ -76,7 +76,10 @@ export const Primary = ({
                                     style={[{ flex: 1 }, appStyles.center]}
                                     onPress={onBackPress ? onBackPress : goBack}
                                 >
-                                    <Icons.Back
+                                    <Icons.Custom
+                                        icon={appIcons.arrow_back}
+                                        size={sizes.icons.medium}
+                                        
                                         //onPress={onBackPress}
                                         //onPress={onBackPress ? onBackPress : goBack}
                                         // style={{ marginLeft: sizes.marginHorizontal }}

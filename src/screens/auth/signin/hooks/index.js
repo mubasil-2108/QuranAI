@@ -5,9 +5,9 @@ import { BackHandler } from 'react-native';
 
 export function useHooks() {
 
-    const handleLogin = (email, password) => {
-        navigate(routes.app)
-    }
+    // const handleLogin = (email, password) => {
+    //     navigate(routes.app)
+    // }
     
 
     const [isChecked, setIsChecked] = useState(false);
@@ -48,7 +48,7 @@ export function useHooks() {
     // }, [modalVisible]);
 
     return {
-        handleLogin,
+        // handleLogin,
         toggleCheckbox,
         togglePasswordVisibility,
         setEmail,

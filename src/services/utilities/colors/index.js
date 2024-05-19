@@ -25,18 +25,18 @@ export const colors = {
   simpletext: 'gray',
   black: '#000000',
   labeltext: '#8091d0',
-  success:'#12E500',
+  success: '#12E500',
   success1: '#00D523',
   rating: '#F4CB1E',
-  warning:'rgba(231, 76, 60, 1)',
+  warning: 'rgba(231, 76, 60, 1)',
 
   error: '#FF2222',
   error2: '#FF0000',
 
-  appStatus1:'#FBE4C3',
-  appStatus2:'#FFF99E',
-  appStatus3:'#BFFCC3',
-  appStatus4:'#139D37',
+  appStatus1: '#FBE4C3',
+  appStatus2: '#FFF99E',
+  appStatus3: '#BFFCC3',
+  appStatus4: '#139D37',
 
 
 
@@ -44,13 +44,14 @@ export const colors = {
 
   appColor1: '#0D2533',
   appColor2: '#F4CB1E',
-  appColor3:'#73A83980',
+  appColor3: '#73A83980',
   appColor5: '#FFFFD0',
-  appColor6:'#FFFF00',
-  appColor7:'#FF9A9A',
-  appColor8:'#FB7979',
-  appColor9:'#003162',
-  appColor10:'#FFDD00',
+  appColor6: '#FFFF00',
+  appColor7: '#FF9A9A',
+  appColor8: '#FB7979',
+  appColor9: '#003162',
+  appColor10: '#FFDD00',
+  appColor11: '#FFFFFF',
 
 
   appTextColor1: '#333333',
@@ -60,8 +61,8 @@ export const colors = {
   appTextColor4: 'rgba(51, 51, 51, 1)',
   appTextColor5: '#A1A1A1',
   appTextColor6: '#FFFFFF',
-  appTextColor7:'#DED9D9',
-  appTextColor8:'#A75503',
+  appTextColor7: '#DED9D9',
+  appTextColor8: '#A75503',
 
   appBgColor1: '#FFFFFF',
   appBgColor2: '#F4F4F4',
@@ -94,5 +95,8 @@ export const colors = {
 
   buttonBorder1: '#333333',
   buttonBorder2: 'rgba(197, 197, 197, 1)',
+
+  //Image Border
+  imageBorder: '#C5C5C5',
 }
 

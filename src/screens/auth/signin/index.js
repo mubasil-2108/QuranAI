@@ -12,8 +12,9 @@ export default function Index(props) {
   return (
     <Wrapper isMain background1 style={[{}]}>
       <ScrollViews.KeyboardAvoiding>
+          <StatusBars.Dark />
         <Wrapper>
-          <StatusBars.Light />
+          {/* <StatusBars.Light /> */}
           <Wrapper  flexDirectionRow justifyContentCenter alignItemsCenter style={{marginTop: width(20), }}>
             <Image source={appImages.book} style={{ height: height(10), width: width(20), }} />
             <Text style={{fontFamily: appFonts.appTextBold, color:colors.appTextColor3, fontSize: totalSize(6), marginLeft: width(3)}}>Quran AI</Text>
