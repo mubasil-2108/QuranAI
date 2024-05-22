@@ -3,7 +3,6 @@ import { Wrapper, Text, Headers, Icons, ScrollViews, Buttons, Spacer } from '../
 import { useHooks } from './hooks'
 import { totalSize, width, height } from 'react-native-dimension';
 import { colors } from '../../../services';
-import { color } from '@rneui/base';
 
 export default function Index() {
     const { terms, text } = useHooks()

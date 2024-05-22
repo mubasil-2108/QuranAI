@@ -12,7 +12,7 @@ const AppNavigation = () => {
         >
              <AppStack.Screen name={routes.home} component={App.Home} /> 
              <AppStack.Screen name={routes.editProfile} component={App.EditProfile} />
-            {/* <AppStack.Screen name={routes.postDetail} component={App.PostDetail} /> */}
+            <AppStack.Screen name={routes.notifications} component={App.Notificatons} />
 
         </AppStack.Navigator>
     )

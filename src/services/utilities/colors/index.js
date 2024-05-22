@@ -90,6 +90,7 @@ export const colors = {
   buttonColor3: '#FFFFFF',
   buttonColor4: '#F1F1F1',
   buttonColor5: 'rgba(255, 255, 255, 1)',
+  buttonColor6: '#E74C3C',
 
   // Button Border
 
@@ -98,5 +99,12 @@ export const colors = {
 
   //Image Border
   imageBorder: '#C5C5C5',
+
+  // Notifications
+  notificationColor1: '#F1F1F1',
+  notificationColor2: '#FFFFFF',
+  
+  // Notification Border
+  notificationBorder: 'rgba(197, 197, 197, 1)',
 }
 

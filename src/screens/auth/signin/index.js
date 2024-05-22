@@ -51,7 +51,7 @@ export default function Index(props) {
           </Wrapper>
         </Wrapper>
         <Wrapper>
-          <Modals.Swipable hideHeader visible={modalVisible} hideContent2={true} toggle={modalVisibility} disableBackdropPress={false}  />
+          <Modals.Swipable hideHeader visible={modalVisible} hideContent2={true} hideContent3={true} toggle={modalVisibility} disableBackdropPress={false}  />
         </Wrapper>
       </ScrollViews.KeyboardAvoiding>
     </Wrapper>

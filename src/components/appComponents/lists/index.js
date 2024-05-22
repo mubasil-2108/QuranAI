@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Wrapper from '../../wrapper';
+
 import Text from '../../text';
 import Spacer from '../../spacer';
 import * as Images from '../../images';
@@ -8,6 +9,7 @@ import { appImages, appStyles, colors, getAppointmentStatusInfo, responsiveFontS
 import { FlatList, Pressable } from 'react-native';
 import { Icon } from '@rneui/base';
 import * as Icons from '../../icons';
+import NotificationItem from '../notificationItems';
 
 export const UsersListVerticalPrimary = ({ data, onPressItem, ...props }) => {
     return (
@@ -143,6 +145,36 @@ export const PostsListVerticalPrimary = ({ data, onPressItem, ...props }) => {
         />
     )
 }
+
+export const NotificationsList = ({ handlePressItem, clickedItems,  data, onPressItem, ...props }) => {
+    
+    
+    return (
+        <FlatList
+            data={data}
+            showsVerticalScrollIndicator={false}
+            // ListFooterComponent={() => <Spacer height={sizes.marginVertical} />}
+            // ListHeaderComponent={() => <Spacer width={sizes.marginVertical} />}
+            // ItemSeparatorComponent={() => <Spacer width={sizes.marginVertical} />}
+            renderItem={({ item, index }) => {
+                const { userName, userImage, timeStamp, notificationText } = item;
+                console.log(clickedItems);
+                return (
+                    <NotificationItem 
+                    onPress={() => handlePressItem(item, index)}
+                    clicked={clickedItems[item.id] || false}
+                        isSelect={clickedItems[item.id]}
+                        userName={userName}
+                        timeStamp={timeStamp}
+                        notificationText={notificationText}
+                        {...item}
+                    />
+                );
+            }}
+            {...props}
+        />
+    );
+};
 
 export const PostPrimary = ({ userImage, userName, timeStamp, title, description, showFullDescription, topic, commentsCount, viewsCount, onPress, containerStyle }) => {
     return (

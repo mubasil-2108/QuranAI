@@ -24,12 +24,9 @@ export const routes = {
    
 
     //app
-    bottomTab: 'bottomTab',
     home: 'home',
     editProfile: 'editProfile',
-    shop: 'shop',
-    community: 'community',
-    postDetail: 'postDetail',
+    notifications: 'notifications',
    
     smartFoodJournal: 'smartFoodJournal',
     sprayLogs: 'sprayLogs',
@@ -42,6 +39,11 @@ export const routes = {
     termsOfService: 'termsOfService',
     howToUse: 'howToUse',
 }
+
+export const animations = {
+    bounceInRight: 'bounceInRight'
+}
+
 export const headers = {
     screenOptions: {
         // headerShown: false,

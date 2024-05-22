@@ -83,8 +83,8 @@ export default function Index(props) {
         </Wrapper>
         <Wrapper isCenter marginVerticalMedium>
           <Wrapper marginVerticalSmall flexDirectionRow alignItemsCenter justifyContentCenter >
-            <Buttons.Colored buttonColor={colors.buttonColor2} buttonStyle={{ height: height(8), width: width(40), marginHorizontal: width(1.5), borderColor: colors.buttonBorder1 }} text={'Google'} iconName={'google'} iconType={'material-community'} textStyle={{ color: colors.appTextColor1, fontFamily: appFonts.appTextBold, fontSize: fontSizes.small }} />
-            <Buttons.Colored buttonColor={colors.buttonColor1} buttonStyle={{ height: height(8), width: width(40), marginHorizontal: width(1.5), borderColor: colors.buttonBorder1 }} text={'Facebook'} iconName={'facebook'} iconType={'material-community'} textStyle={{ color: colors.appTextColor6, fontFamily: appFonts.appTextBold, fontSize: fontSizes.small }} />
+            <Buttons.Colored buttonColor={colors.buttonColor2} buttonStyle={{ height: height(8), width: width(40), marginHorizontal: width(1.5), borderColor: colors.buttonBorder1 }} text={'Cancel'} iconName={'google'} iconType={'material-community'} textStyle={{ color: colors.appTextColor1, fontFamily: appFonts.appTextBold, fontSize: fontSizes.small }} />
+            <Buttons.Colored buttonColor={colors.buttonColor1} buttonStyle={{ height: height(8), width: width(40), marginHorizontal: width(1.5), borderColor: colors.buttonBorder1 }} text={'Update'} iconName={'facebook'} iconType={'material-community'} textStyle={{ color: colors.appTextColor6, fontFamily: appFonts.appTextBold, fontSize: fontSizes.small }} />
           </Wrapper>
         </Wrapper>
       </ScrollViews.KeyboardAvoiding>

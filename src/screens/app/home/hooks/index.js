@@ -6,7 +6,6 @@ import { routes } from '../../../../services';
 export function useHooks() {
 
     const [modalHomeVisible, setModalHomeVisible] = useState(false);
-    const [modalLogoutVisible, setModalLogoutVisible] = useState(false);
     const [value, setValue] = useState(null);
 
     useEffect(() => {
@@ -20,9 +19,7 @@ export function useHooks() {
         return true;
     };
 
-    const modalLogoutVisibility = () => {
-        setModalLogoutVisible(!modalLogoutVisible);
-    };
+    
     const modalHomeVisibility = () => {
         setModalHomeVisible(!modalHomeVisible);
     };
@@ -34,5 +31,5 @@ export function useHooks() {
     ];
 
 
-    return { modalHomeVisible, modalHomeVisibility, data, value, setValue, goBack, modalLogoutVisible, modalLogoutVisibility }
+    return { modalHomeVisible, modalHomeVisibility, data, value, setValue, goBack }
 }

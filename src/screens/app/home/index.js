@@ -18,7 +18,7 @@ export default function Home(props) {
             <Headers.Primary title={'Quran AI'} titleStyle={{ fontFamily: appFonts.appTextMedium, color: colors.appTextColor1, fontSize: fontSizes.h4, }} containerStyle={{height:height(10)}}/>
             <Wrapper flexDirectionRow>
               <Wrapper marginHorizontalSmall style={{ alignSelf: 'center', justifyContent: 'center', height: sizes.images.mediumSmall, width: sizes.images.mediumSmall, backgroundColor: colors.buttonColor3, borderRadius: 150}}>
-                <Icons.Button   buttonStyle={{alignSelf: 'center', justifyContent: 'center', height: sizes.icons.large, width: sizes.icons.large}} iconSize={sizes.icons.medium} iconColor={colors.iconColor4} buttonColor={colors.transparent} iconName={'bell-outline'} iconType={'material-community'} />
+                <Icons.Button onPress={()=> {navigate(routes.notifications)}} buttonStyle={{alignSelf: 'center', justifyContent: 'center', height: sizes.icons.large, width: sizes.icons.large}} iconSize={sizes.icons.medium} iconColor={colors.iconColor4} buttonColor={colors.transparent} iconName={'bell-outline'} iconType={'material-community'} />
               </Wrapper>
               <Wrapper  style={{ alignSelf: 'center', justifyContent: 'center', height: sizes.images.mediumSmall, width: sizes.images.mediumSmall, backgroundColor: 'pink', borderColor: colors.buttonColor1, borderRadius: 150, borderWidth: height(0.4) }} >
                 <Icons.Custom onPress={modalHomeVisibility} icon={appImages.profile} containerStyle={{ alignSelf: 'center', justifyContent: 'center',  }} size={sizes.images.mediumXSmall} />
@@ -29,7 +29,8 @@ export default function Home(props) {
             {/* <Image style={{}} /> */}
           </Wrapper>
 
-          <Modals.Swipable navigate={navigate} data={data} setValue={setValue} toggleLogout={modalLogoutVisibility} visibleLogout={modalLogoutVisible} value={value} hideContent={true} hideHeader visible={modalHomeVisible} toggle={modalHomeVisibility} disableBackdropPress={false} />       
+          <Modals.Swipable navigate={navigate} data={data} setValue={setValue} value={value} hideContent={true} hideContent3={true} hideHeader visible={modalHomeVisible} toggle={modalHomeVisibility} disableBackdropPress={false} />       
+
         </Wrapper>
       </ScrollViews.KeyboardAvoiding>
     </Wrapper>
