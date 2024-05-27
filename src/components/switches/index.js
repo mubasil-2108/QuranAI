@@ -5,6 +5,7 @@ import  Wrapper from '../wrapper'
 import * as Icons  from '../icons'
 import Text  from '../text'
 import { colors, handleAnimation, HelpingMethods, sizes } from '../../services'
+import { TouchableOpacity } from 'react-native'
 
 
 export const Primary = ({ value, onPress,tintColor }) => {
@@ -89,3 +90,51 @@ export const Secondary = ({ value, onPress }) => {
         </Wrapper>
     )
 }
+
+export const Custom = ({ value, onPress, tintColor }) => {
+    const defaultTintColor = tintColor || value ? colors.appColor1 : colors.appBgColor5;
+
+    return (
+        <Wrapper style={{}} isCenter>
+            <TouchableOpacity
+                activeOpacity={1}
+                style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    width: totalSize(10),
+                }}
+                onPress={onPress ? () => {
+                    handleAnimation();
+                    onPress();
+                } : null}
+            >
+                <Text style={{ color: defaultTintColor }}>KJV</Text>
+                <Wrapper style={{
+                    width: totalSize(5),
+                    height: totalSize(2.5),
+                    borderRadius: totalSize(1.25),
+                    borderWidth: 1,
+                    borderColor: defaultTintColor,
+                    paddingHorizontal: 1.75,
+                    paddingVertical: 0.1,
+                    backgroundColor: colors.transparent,
+                }}>
+                    <Wrapper style={{
+                        flex: 1,
+                        flexDirection: 'row',
+                        justifyContent: value ? 'flex-end' : 'flex-start',
+                    }}>
+                        <Wrapper style={{
+                            width: totalSize(2.5),
+                            height: totalSize(2.5),
+                            borderRadius: totalSize(1.25),
+                            backgroundColor: defaultTintColor,
+                        }} />
+                    </Wrapper>
+                </Wrapper>
+                <Text style={{ color: defaultTintColor }}>NIV</Text>
+            </TouchableOpacity>
+        </Wrapper>
+    );
+};

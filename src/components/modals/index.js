@@ -209,7 +209,7 @@ export const Swipable = ({
                                             text={'Logout'} customIconLeft={appIcons.log_out} hideContent4={true}
                                             customIconRight={appIcons.chevron_right} tintColor={colors.warning} flex={6}
                                             textStyle={{ fontFamily: appFonts.appTextBold, fontSize: fontSizes.regular, }}
-                                            onPress={modalLogoutVisibility}
+                                            onPress={modalLogout}
                                             iconStyle={{ alignSelf: 'center', }} />
                                     </Wrapper>
                                 </Wrapper>
@@ -228,7 +228,7 @@ export const Swipable = ({
                                 </Wrapper>
                             </>
                         )}
-                        <Modals.Swipable visible={modalLogoutVisible} toggle={() => {setModalLogoutVisible(true) }} hideContent2={true} hideContent={true} hideHeader  disableBackdropPress={false} />
+                        {/* <Modals.Swipable visible={modalLogoutVisible} toggle={() => {modalLogoutVisibility(); modalHomeVisibility(false) }} hideContent2={true} hideContent={true} hideHeader  disableBackdropPress={false} /> */}
 
                         {/* <ImageBackground style={{}} ></ImageBackground> */}
                     </Wrapper>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "646996260807",
+    "project_id": "quranai-3de41",
+    "storage_bucket": "quranai-3de41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646996260807:android:b1a676d10c4a335d4fcbe2",
+        "android_client_info": {
+          "package_name": "com.bibleai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPUPAZNcGxgyOehVnTEzzZ6tIYmCOdhuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

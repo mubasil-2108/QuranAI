@@ -106,5 +106,12 @@ export const colors = {
   
   // Notification Border
   notificationBorder: 'rgba(197, 197, 197, 1)',
+
+  // Message Box
+  messageBoxColor1: '#A75503',
+  messageBoxColor2:'#F1F1F1',
+  messageBoxBorderColor1:'#C5C5C5',
+  messageInputContainer:'#FFFFFF'
+
 }
 

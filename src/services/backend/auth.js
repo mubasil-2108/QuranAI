@@ -1,16 +1,13 @@
 import { endPoints } from "../constants";
 import {api} from "../utilities";
 
-export const register = async ({ email, password, firstName, lastName, userName, birthDate, avatar }) => {
+export const register = async ({ email, password,fullName }) => {
     let response = null
     const formData = new FormData()
     formData.append('email', email)
     formData.append('password', password)
-    formData.append('firstName', firstName)
-    formData.append('lastName', lastName)
-    formData.append('userName', userName)
-    formData.append('birthDate', birthDate)
-    avatar ? formData.append('avatar', avatar) : null
+    formData.append('fullName', fullName)
+    // avatar ? formData.append('avatar', avatar) : null
     const config = {
         headers: {
             'Content-Type': 'multipart/form-data',

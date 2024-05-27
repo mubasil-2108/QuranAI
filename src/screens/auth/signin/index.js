@@ -12,7 +12,7 @@ export default function Index(props) {
   return (
     <Wrapper isMain background1 style={[{}]}>
       <ScrollViews.KeyboardAvoiding>
-          <StatusBars.Dark />
+          <StatusBars.Dark  />
         <Wrapper>
           {/* <StatusBars.Light /> */}
           <Wrapper  flexDirectionRow justifyContentCenter alignItemsCenter style={{marginTop: width(20), }}>

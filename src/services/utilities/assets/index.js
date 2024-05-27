@@ -31,7 +31,8 @@ const appIcons = {
     file_text: require('../../../assets/icons/file_text.png'),
     log_out: require('../../../assets/icons/log_out.png'),
     chevron_right: require('../../../assets/icons/chevron_right.png'),
-    arrow_back: require('../../../assets/icons/arrow_back.png')
+    arrow_back: require('../../../assets/icons/arrow_back.png'),
+    send: require('../../../assets/icons/send.png'),
 }
 
 const appFonts = {
